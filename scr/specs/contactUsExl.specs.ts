@@ -25,11 +25,11 @@ describe('Екран за контакти - това е ТестСуит', () =
   email=element(by.xpath("//input[contains(@type,'email')]")); // полето за e-mail
   name=element(by.xpath("//input[contains(@name,'your-name')]")); //полето за име
   subject=element(by.xpath("//input[@id='cf-4']"));//полето за заглавие
-  yourMessege=element(by.xpath("//textarea[contains(@name,'your-message')]")); //текстовотополе за твоето съобщение
-  tel=element(by.xpath("//input[contains(@type,'tel')]")); // полето за телефонен номер
-  sendBtn=element(by.xpath("//input[contains(@type,'submit')]")); // полето за бутон send
-  notValidEmail=element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // локаторът за невалидно съобщение
-  responseOutput=element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // разделът за грешки в полетата
+  yourMessege=element(by.xpath("//textarea[contains(@name,'your-message')]")); // field for your-message
+  tel=element(by.xpath("//input[contains(@type,'tel')]")); // field for tel
+  sendBtn=element(by.xpath("//input[contains(@type,'submit')]")); // locator for button submite
+  notValidEmail=element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // locator for The e-mail address entered is invalid.
+  responseOutput=element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // locator for message One or more fields have an error. Please check and try again.
 
   var EK = protractor.ExpectedConditions;
 
@@ -50,22 +50,22 @@ describe('Екран за контакти - това е ТестСуит', () =
     it('Test 1 - попълване коректни данни; ', async () => {  
       await  browser.sleep(5000);    
       await contactUsBtn.click();
-      await browser.wait(EK.visibilityOf( header ), 5000, 'На екрана се очакваше да има Заглавие "' + header + '", но го няма!');       // за време изаква да се появи заглавието.
+      await browser.wait(EK.visibilityOf( header ), 5000, 'Expected heading "' + header + '", but is not!');       // за време изаква да се появи заглавието. 
       expect(await header.getText()).toEqual(data.header); 
-      await browser.wait(EK.visibilityOf( email ), 5000, 'На екрана се очакваше да има e-mail "' + email + '", но го няма!');
+      await browser.wait(EK.visibilityOf( email ), 5000, 'Expected email "' + email + '", but is not!');
       await email.sendKeys(data.email);
       await  browser.sleep(5000);  
-      await browser.wait(EK.visibilityOf( name ), 5000, 'На екрана се очакваше да има име "' + name + '", но го няма!');
+      await browser.wait(EK.visibilityOf( name ), 5000, 'Expected name "' + name + '", but is not!');
       await name.sendKeys(data.name);
       await browser.sleep(5000);
-      await browser.wait(EK.visibilityOf( subject ), 5000, 'На екрана се очакваше да има предмет"' + subject + '", но го няма!');
+      await browser.wait(EK.visibilityOf( subject ), 5000, 'Expected subject"' + subject + '", but is not!');
       await subject.sendKeys(data.subject);
-      await browser.wait(EK.visibilityOf( yourMessege ), 5000, 'На екрана се очакваше да има съобщние "' + yourMessege + '", но го няма!');
+      await browser.wait(EK.visibilityOf( yourMessege ), 5000, 'Expected message "' + yourMessege + '", but is not!');
       await yourMessege.sendKeys(data.yourMessege);
-      await browser.wait(EK.visibilityOf( tel ), 5000, 'На екрана се очакваше да има телефон "' + tel + '", но го няма!');
+      await browser.wait(EK.visibilityOf( tel ), 5000, 'Expected tel "' + tel + '", but is not!');
       await tel.sendKeys(data.tel);
       await sendBtn.click();
- await browser.wait(EK.visibilityOf(notValidEmail  ), 10000, 'На екрана се очакваше да има съобщение "' + notValidEmail + '", но го няма!');
+ await browser.wait(EK.visibilityOf(notValidEmail  ), 10000, 'Expected message "' + notValidEmail + '", but is not!');
       await  browser.sleep(5000);  
       var aa = await notValidEmail.getText();
       expect(aa).toContain(data.notValidEmailMess);
@@ -87,30 +87,30 @@ describe('Екран за контакти - това е ТестСуит', () =
 
       await  browser.sleep(5000);    
       await contactUsBtn.click();
-      await browser.wait(EK.visibilityOf( header ), 5000, 'На екрана се очакваше да има Заглавие "' + header + '", но го няма!');       // за време изаква да се появи заглавието.
+      await browser.wait(EK.visibilityOf( header ), 5000, 'Expected heading "' + header + '", but is not!');       // за време изаква да се появи заглавието.
       expect(await header.getText()).toEqual('CONTACT US'); 
 
-      await browser.wait(EK.visibilityOf( email ), 5000, 'На екрана се очакваше да има e-mail "' + email + '", но го няма!');
+      await browser.wait(EK.visibilityOf( email ), 5000, ' Expected email  "' + email + '", but is not!');
 
       await email.sendKeys('e-mail.abv.bg');
       await  browser.sleep(5000);  
 
-      await browser.wait(EK.visibilityOf( name ), 5000, 'На екрана се очакваше да има име "' + name + '", но го няма!');
+      await browser.wait(EK.visibilityOf( name ), 5000, ' Expected name "' + name + '", but is not!');
 
       await name.sendKeys('875649');
       await browser.sleep(5000);
 
-      await browser.wait(EK.visibilityOf( subject ), 5000, 'На екрана се очакваше да има предмет"' + subject + '", но го няма!');
+      await browser.wait(EK.visibilityOf( subject ), 5000, 'Expected subject "' + subject + '", but is not!');
 
       await subject.sendKeys('////////////');
       await browser.sleep(5000);
 
-      await browser.wait(EK.visibilityOf( yourMessege ), 5000, 'На екрана се очакваше да има съобщение "' + yourMessege + '", но го няма!');
+      await browser.wait(EK.visibilityOf( yourMessege ), 5000, 'Expected your message "' + yourMessege + '", but is not!');
 
       await yourMessege.sendKeys('');
       await browser.sleep(5000);
 
-      await browser.wait(EK.visibilityOf( tel ), 5000, 'На екрана се очакваше да има телефон "' + tel + '", но го няма!');
+      await browser.wait(EK.visibilityOf( tel ), 5000, 'Expected tel "' + tel + '", but is not!');
 
       await tel.sendKeys('676767');
       await browser.sleep(5000);
@@ -126,10 +126,10 @@ describe('Екран за контакти - това е ТестСуит', () =
 
       await  browser.sleep(5000);    
       await contactUsBtn.click();
-      await browser.wait(EK.visibilityOf( header ), 5000, 'На екрана се очакваше да има Заглавие "' + header + '", но го няма!');       // за време изаква да се появи заглавието.
+      await browser.wait(EK.visibilityOf( header ), 5000, 'Expected heading "' + header + '", but is not!');       // за време изаква да се появи заглавието.
       expect(await header.getText()).toEqual('CONTACT US'); 
 
-      await browser.wait(EK.visibilityOf( email ), 5000, 'На екрана се очакваше да има e-mail "' + email + '", но го няма!');
+      await browser.wait(EK.visibilityOf( email ), 5000, 'Expected  e-mail "' + email + '", but is not!');
 
       await email.sendKeys('e-mail.abv.bg');
 
@@ -145,10 +145,10 @@ describe('Екран за контакти - това е ТестСуит', () =
 
       await  browser.sleep(5000);    
       await contactUsBtn.click();
-      await browser.wait(EK.visibilityOf( header ), 5000, 'На екрана се очакваше да има Заглавие "' + header + '", но го няма!');       // за време изаква да се появи заглавието.
+      await browser.wait(EK.visibilityOf( header ), 5000, 'Expected heading "' + header + '", but is not!');       // за време изаква да се появи заглавието.
       expect(await header.getText()).toEqual('CONTACT US'); 
 
-      await browser.wait(EK.visibilityOf( email ), 5000, 'На екрана се очакваше да има e-mail "' + email + '", но го няма!');
+      await browser.wait(EK.visibilityOf( email ), 5000, 'Expected email "' + email + '", but is not!');
 
       await email.sendKeys('e-mail.abv.bg');
 
