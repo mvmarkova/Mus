@@ -44,26 +44,26 @@ var contactUsBtn!: ElementFinder;
   header = element(by.xpath("//h2[contains(.,'Contact Us')]")); // заглавие на прозореца за контакт
   email = element(by.xpath("//input[contains(@type,'email')]")); // полето за e-mail
   name = element(by.xpath("//input[contains(@name,'your-name')]")); //полето за име
-  subject = element(by.xpath("//input[@id='cf-4']"));//полето за заглавие
-  yourMessege = element(by.xpath("//textarea[contains(@name,'your-message')]")); //текстовотополе за твоето съобщение
-  tel = element(by.xpath("//input[contains(@type,'tel')]")); // полето за телефонен номер
-  sendBtn = element(by.xpath("//input[contains(@type,'submit')]")); // полето за бутон send
-  notValidEmail = element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // локаторът за невалидно съобщение
-  responseOutput = element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // разделът за грешки в полетата
-  destinationHeader = element(by.xpath("//label[@class='fr'][contains(.,'Destination')]")); // етикет  на дестинация
-  checkInHeader = element(by.xpath("//label[@class='fr'][contains(.,'Check in')]")); // етикет на check in 
-  checkIn = element(by.xpath("//input[@id='checkin']"));
-  checkOut= element(by.xpath("//input[contains(@name,'checkout')]")); 
-  destination = element(by.xpath("(//span[@class='select2-chosen'][contains(.,'Search by Hotel or City Name')])[1]")); // локатор за полето дестинация 
-  destinationValue = element(by.xpath("//div[@class='select2-result-label'][contains(.,'Alzer Hotel Istanbul, Istanbul')]"));
-  adultsDownBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-down '][contains(.,'-')])[1]")); // бутон -
-  adultsUpBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-up '][contains(.,'+')])[1]")); // бутон +
-  childDownBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-down '][contains(.,'-')])[2]")); // бутон -
-  childUpBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-up '][contains(.,'+')])[2]")); // бутон + 
-  searchBtn = element(by.xpath("(//button[@type='submit'][contains(.,'Search')])[1]")); // локаторът за search 
-  noMatchesFound = element(by.xpath("//li[@class='select2-no-results'][contains(.,'No matches found')]")); // съобщение за ненамерени 
-  destinationIns = element(by.xpath("(//input[contains(@type,'text')])[44]")); 
-  hotelHeading = element(by.xpath("//span[@class='text-primary'][contains(.,'alzer-hotel-istanbuls')]")); 
+  subject = element(by.xpath("//input[@id='cf-4']"));   // field for subject
+  yourMessege = element(by.xpath("//textarea[contains(@name,'your-message')]")); // field for your-message
+  tel = element(by.xpath("//input[contains(@type,'tel')]")); // field for tel
+  sendBtn = element(by.xpath("//input[contains(@type,'submit')]")); // locator for button send
+  notValidEmail = element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // field for The e-mail address entered is invalid.
+  responseOutput = element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // field for One or more fields have an error. Please check and try again.
+  destinationHeader = element(by.xpath("//label[@class='fr'][contains(.,'Destination')]")); // field for destination
+  checkInHeader = element(by.xpath("//label[@class='fr'][contains(.,'Check in')]")); // 
+  checkIn = element(by.xpath("//input[@id='checkin']"));// field for check in 
+  checkOut= element(by.xpath("//input[contains(@name,'checkout')]")); //field for check out
+  destination = element(by.xpath("(//span[@class='select2-chosen'][contains(.,'Search by Hotel or City Name')])[1]")); // locator for Search by Hotel or City Name
+  destinationValue = element(by.xpath("//div[@class='select2-result-label'][contains(.,'Alzer Hotel Istanbul, Istanbul')]")); // locator for Alzer Hotel Istanbul 
+  adultsDownBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-down '][contains(.,'-')])[1]")); // button -
+  adultsUpBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-up '][contains(.,'+')])[1]")); // button +
+  childDownBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-down '][contains(.,'-')])[2]")); // button -
+  childUpBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-up '][contains(.,'+')])[2]")); // button + 
+  searchBtn = element(by.xpath("(//button[@type='submit'][contains(.,'Search')])[1]")); // locator for button search
+  noMatchesFound = element(by.xpath("//li[@class='select2-no-results'][contains(.,'No matches found')]")); // locator for No matches found 
+  destinationIns = element(by.xpath("(//input[contains(@type,'text')])[44]")); // locator for destination
+  hotelHeading = element(by.xpath("//span[@class='text-primary'][contains(.,'alzer-hotel-istanbuls')]")); // locator for alzer-hotel-istanbuls
 
   var EK = protractor.ExpectedConditions; 
    var timeForWait: number=5000; // time for expected conditional 
