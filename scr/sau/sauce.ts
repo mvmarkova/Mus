@@ -67,87 +67,87 @@ describe('Екран за контакти - това е ТестСуит', () =
   PossitiveAndNegativeTest.forEach(function (data: any) {
     
   it('Test 1 - попълване коректни данни; ', async () => {  
-    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", но го няма!');
+    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", but is not!');
     await username.sendKeys(data.username);
-    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", но го няма!');
+    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", but is not!');
     await password.sendKeys(data.password);
-    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", но го няма!');
+    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", but is not!');
     await loginBtn.click();
-    await browser.wait(EK.visibilityOf( notValidEmailAndPassword ), timeForWait, 'Expected message "' + notValidEmailAndPassword + '", но го няма!');
+    await browser.wait(EK.visibilityOf( notValidEmailAndPassword ), timeForWait, 'Expected message "' + notValidEmailAndPassword + '", but is not!');
     expect(await notValidEmailAndPassword.getText()).toEqual(data.notValidEmailAndPassword);
   })
 })
   it('Test 1 - попълване коректни данни; ', async () => {  
-    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", но го няма!');
+    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", but is not!');
     await username.sendKeys('standardd_user');
-    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", но го няма!');
+    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", but is not!');
     await password.sendKeys('secret_sauce');
-    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", но го няма!')
+    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", but is not!')
     await loginBtn.click();
-    await browser.wait(EK.visibilityOf( notValidEmailAndPassword ), timeForWait, 'Expeted messsage "' + notValidEmailAndPassword + '", но го няма!');
+    await browser.wait(EK.visibilityOf( notValidEmailAndPassword ), timeForWait, 'Expeted messsage "' + notValidEmailAndPassword + '", but is not!');
     expect(await notValidEmailAndPassword.getText()).toEqual('Epic sadface: Username and password do not match any user in this service');
   
   })
 
   it('Test 1 - попълване коректни данни; ', async () => {  
-    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", но го няма!');
+    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", but is not!');
     await username.sendKeys('standard_user');
-    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", но го няма!');
+    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", but is not!');
     await password.sendKeys('');
-    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", но го няма!')
+    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", but is not!')
     await loginBtn.click();
-    await browser.wait(EK.visibilityOf( passwordRequired ), timeForWait, 'Expected messege "' + passwordRequired + '", но го няма!');
+    await browser.wait(EK.visibilityOf( passwordRequired ), timeForWait, 'Expected messege "' + passwordRequired + '", but is not!');
     expect(await passwordRequired.getText()).toEqual('Epic sadface: Password is required');
   })
 
   it('Test 1 - попълване коректни данни; ', async () => {  
-    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", но го няма!');
+    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", but is not!');
     await username.sendKeys('');
-    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", но го няма!');
+    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", but is not!');
     await password.sendKeys('');
-    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", но го няма!')  
+    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", but is not!')  
     await loginBtn.click();
-    await browser.wait(EK.visibilityOf( usernameRequired ), timeForWait, 'Expected message "' + usernameRequired + '", но го няма!');
+    await browser.wait(EK.visibilityOf( usernameRequired ), timeForWait, 'Expected message "' + usernameRequired + '", but is not!');
     expect(await usernameRequired.getText()).toEqual('Epic sadface: Username is required');
   })
 
   it('Test 1 - попълване коректни данни; ', async () => {  
-    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", но го няма!');
+    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", but is not!');
     await username.sendKeys('standard_user');
-    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", но го няма!');
+    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", but is not!');
     await password.sendKeys('secret_sauce');
-    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", но го няма!')
+    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", but is not!')
     await loginBtn.click();
     expect(await browser.getCurrentUrl()).toEqual("https://www.saucedemo.com/inventory.html");
 
   })
 
   it('Test 1 - попълване коректни данни; ', async () => {  
-    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", но го няма!');
+    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", but is not!');
     await username.sendKeys('locked_out_user');
-    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", но го няма!');
+    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", but is not!');
     await password.sendKeys('secret_sauce');   
-    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected button "' + loginBtn + '", но го няма!');
+    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected button "' + loginBtn + '", but is not!');
     await loginBtn.click();
     expect(await lockedUser.getText()).toEqual('Epic sadface: Sorry, this user has been locked out.');
   }) 
 
   it('Test 1 - попълване коректни данни; ', async () => {  
-    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", но го няма!');
+    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", but is not!');
     await username.sendKeys('problem_user');
-    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected button password "' + password + '", но го няма!');
+    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected button password "' + password + '", but is not!');
     await password.sendKeys('secret_sauce');
-    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", но го няма!');
+    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", but is not!');
     await loginBtn.click();
     expect(await browser.getCurrentUrl()).toEqual("https://www.saucedemo.com/inventory.html");
   })
 
   it('Test 1 - попълване коректни данни; ', async () => { 
-    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", но го няма!');
+    await browser.wait(EK.visibilityOf( username ), timeForWait, 'Expected username "' + username + '", but is not!');
     await username.sendKeys('performance_glitch_user');
-    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", но го няма!');
+    await browser.wait(EK.visibilityOf( password ), timeForWait, 'Expected password "' + password + '", but is not!');
     await password.sendKeys('secret_sauce');
-    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", но го няма!');
+    await browser.wait(EK.elementToBeClickable( loginBtn ), timeForWait, 'Expected login "' + loginBtn + '", but is not !');
     await loginBtn.click();
     expect(await browser.getCurrentUrl()).toEqual("https://www.saucedemo.com/inventory.html");
   })
