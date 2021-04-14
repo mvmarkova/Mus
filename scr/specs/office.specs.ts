@@ -20,10 +20,10 @@ describe('Екран за контакти - това е ТестСуит', () =
   name=element(by.xpath("//input[contains(@name,'your-name')]")); //полето за име
   subject=element(by.xpath("//input[@id='cf-4']"));//полето за заглавие
   yourMessege=element(by.xpath("//textarea[contains(@name,'your-message')]")); //текстовотополе за твоето съобщение
-  tel=element(by.xpath("//input[contains(@type,'tel')]")); // полето за телефонен номер
+  tel=element(by.xpath("//input[contains(@type,'tel')]")); // полето за tel
   sendBtn=element(by.xpath("//input[contains(@type,'submit')]")); // полето за бутон send
-  notValidEmail=element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // локаторът за невалидно съобщение
-  responseOutput=element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // разделът за грешки в полетата
+  notValidEmail=element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // локаторът за The e-mail address entered is invalid.
+  responseOutput=element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // field for One or more fields have an error. Please check and try again.
 
   var EK = protractor.ExpectedConditions;
 
