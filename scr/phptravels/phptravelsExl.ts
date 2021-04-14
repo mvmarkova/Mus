@@ -38,9 +38,9 @@ describe('Екран за контакти - това е ТестСуит', () =
   yourMessege = element(by.xpath("//textarea[contains(@name,'your-message')]")); //текстовотополе за твоето съобщение
   tel = element(by.xpath("//input[contains(@type,'tel')]")); // полето за телефонен номер
   sendBtn = element(by.xpath("//input[contains(@type,'submit')]")); // полето за бутон send
-  notValidEmail = element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // локаторът за невалидно съобщение
-  responseOutput = element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // разделът за грешки в полетата
-  destinationHeader = element(by.xpath("//label[@class='fr'][contains(.,'Destination')]")); // етикет  на дестинация
+  notValidEmail = element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // локаторът за The e-mail address entered is invalid.
+  responseOutput = element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // field for One or more fields have an error. Please check and try again.
+  destinationHeader = element(by.xpath("//label[@class='fr'][contains(.,'Destination')]")); // етикет  на destination
   checkInHeader = element(by.xpath("//label[@class='fr'][contains(.,'Check in')]")); // етикет на check in 
   checkIn = element(by.xpath("//input[@id='checkin']"));
   checkOut= element(by.xpath("//input[contains(@name,'checkout')]")); 
