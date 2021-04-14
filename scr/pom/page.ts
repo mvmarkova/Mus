@@ -45,10 +45,10 @@ export class Page {
     this.name = element(by.xpath("//input[contains(@name,'your-name')]")); //полето за име
     this.subject = element(by.xpath("//input[@id='cf-4']"));//полето за заглавие
     this.yourMessege = element(by.xpath("//textarea[contains(@name,'your-message')]")); //текстовотополе за твоето съобщение
-    this.tel = element(by.xpath("//input[contains(@type,'tel')]")); // полето за телефонен номер
+    this.tel = element(by.xpath("//input[contains(@type,'tel')]")); // полето за  tel
     this.sendBtn = element(by.xpath("//input[contains(@type,'submit')]")); // полето за бутон send
-    this.notValidEmail = element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // локаторът за невалидно съобщение
-    this.responseOutput = element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // разделът за грешки в полетата
+    this.notValidEmail = element(by.xpath("//span[@class='wpcf7-not-valid-tip'][contains(.,'The e-mail address entered is invalid.')]")); // локаторът за The e-mail address entered is invalid.
+    this.responseOutput = element(by.xpath("//div[@class='wpcf7-response-output'][contains(.,'One or more fields have an error. Please check and try again.')]")); // field for One or more fields have an error. Please check and try again.
     this.destinationHeader = element(by.xpath("//label[@class='fr'][contains(.,'Destination')]")); // етикет  на дестинация
     this.checkInHeader = element(by.xpath("//label[@class='fr'][contains(.,'Check in')]")); // етикет на check in 
     this.checkIn = element(by.xpath("//input[@id='checkin']"));
@@ -60,7 +60,7 @@ export class Page {
     this.childDownBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-down '][contains(.,'-')])[2]")); // бутон -
     this.childUpBtn = element(by.xpath("(//button[@class='btn btn-white bootstrap-touchspin-up '][contains(.,'+')])[2]")); // бутон + 
     this.searchBtn = element(by.xpath("(//button[@type='submit'][contains(.,'Search')])[1]")); // локаторът за search 
-    this.noMatchesFound = element(by.xpath("//li[@class='select2-no-results'][contains(.,'No matches found')]")); // съобщение за ненамерени 
+    this.noMatchesFound = element(by.xpath("//li[@class='select2-no-results'][contains(.,'No matches found')]")); // съобщение за No matches found
     this.destinationIns = element(by.xpath("(//input[contains(@type,'text')])[44]")); 
   
 
@@ -109,7 +109,7 @@ export class Page {
     }
 
     async destinationDDL() {
-       await browser.wait(this.EK.elementToBeClickable(this.destination), this.timeForWait, 'Expected button to be clicked "' + this.destination + '", but is not!');
+       await browser.wait(this.EK.elementToBeClickable(this.destination), this.timeForWait, 'Expected button clicked "' + this.destination + '", but is not!');
     await this.destination.click();
     await browser.wait(this.EK.visibilityOf(this.destinationValue), this.timeForWait, 'На екрана се очакваше да се разлисти списъка с хотели "' + this.destinationValue + '", но го няма!');
     await this.destinationValue.click();
